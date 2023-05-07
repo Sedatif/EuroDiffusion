@@ -19,14 +19,14 @@ Sample Input:
 
 ```js
 3
-France 1 4 4 6
-Spain 3 1 6 3
 Portugal 1 1 2 2
+Spain 3 1 6 3
+France 1 4 4 6
 1
 Luxembourg 1 1 1 1
 2
-Netherlands 1 3 2 4
 Belgium 1 1 2 2
+Netherlands 1 3 2 4
 0
 ```
 
@@ -37,13 +37,13 @@ For each test case, print a line indicating the case number, followed by a line 
 Output for the Sample Input:
 
 ```js
-Case Number 1
+
 Spain 379
-Portugal 414
-France 1324
-Case Number 2
+Portugal 416
+France 1322
+
 Luxembourg 1
-Case Number 3
+
 Belgium 2
-Netherlands 3 
+Netherlands 2 
 ```

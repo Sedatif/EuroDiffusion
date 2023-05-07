@@ -1,22 +1,22 @@
 IN:
 3
-France 1 4 4 6
-Spain 3 1 6 3
 Portugal 1 1 2 2
+Spain 3 1 6 3
+France 1 4 4 6
 1
 Luxembourg 1 1 1 1
 2
-Netherlands 1 3 2 4
 Belgium 1 1 2 2
+Netherlands 1 3 2 4
 0
 
 OUT:
 
 Spain 379
-Portugal 414
-France 1324
+Portugal 416
+France 1322
 
 Luxembourg 1
 
 Belgium 2
-Netherlands 3
+Netherlands 2
