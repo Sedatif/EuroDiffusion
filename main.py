@@ -19,7 +19,7 @@ class Country: # Клас, який уособлює країну
         self.completed = False
         self.connected = False
 
-    def setCities(self): # Створення записів про міста країни
+    def SetCities(self): # Створення записів про міста країни
         self.cities = [City(x, y, self.name, countries) for y in range(self.yl, self.yh + 1) for x in range(self.xl, self.xh + 1)]
 
     def Day(self): # Емуляція денного існування країни
@@ -31,6 +31,7 @@ class Country: # Клас, який уособлює країну
             if not city.IsCompleted():
                 return False
         self.completed = True
+        return True
 
     def Update(self): # Оновлює інформацію про місто після денного існування
         for city in self.cities:
@@ -219,7 +220,7 @@ def CityFound(cities, name): # Перевірка, чи є місто за су�
 # Методи для обчислення параметрів задачі
 def Set(): # Встановлення даних про міста країни
     for country in countries:
-        country.setCities()
+        country.SetCities()
 
 def Complete(): # Процес існування країн до завершення кожної з них
     length = len(countries)
@@ -236,7 +237,7 @@ def Day(): # Емуляція одного дня
             CheckCompleted()
 
 # MAIN
-def main():
+def Main():
     count = 0
     while True:
         try:
@@ -258,4 +259,4 @@ def main():
                 break
 
 if __name__ == '__main__':
-    main()
+    Main()
