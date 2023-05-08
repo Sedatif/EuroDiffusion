@@ -92,6 +92,9 @@ def CheckInputData(): # Перевірка правильності введен
     if count != 5:
         return None
     name = dataWords[0]
+    if len(name) > 25:
+        print("Надто велика назва країни")
+        return None
     dataWordsDictionary = {'name': name}
     dataWordsDictionary['xl'] = int(dataWords[1])
     dataWordsDictionary['yl'] = int(dataWords[2])
@@ -150,7 +153,7 @@ def CheckInputValidation(count): # Вивід перевірок
             print("Координати країни введено неправильно")
             continue
         if not data:
-            print("Координати країни введено неправильно")
+            print("Спробуйте ввести назву країни та її координати ще раз")
             continue
         elif CountryExist(data['name']):
             print("Країна вже існує")
@@ -243,6 +246,9 @@ def Main():
         try:
             count = int(input())
         except Exception as e:
+            print("Некоректне введення числа країн")
+            continue
+        if count < 0 or count > 20:
             print("Неправильно введене число країн")
             continue
         if not count:
