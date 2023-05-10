@@ -68,12 +68,12 @@ class City: # Клас, який уособлює місто країни
             for country in self.coins.keys():
                 city.coins[country] += int(self.previousCoins[country] / valueToSend)
                 self.previousCoins[country] -= int(self.previousCoins[country] / valueToSend)
-
+                
     def Day(self): # Емуляція процесу денного проживання міста
-        self.SendCoinsToNeighbor(self.x, self.y-1)
-        self.SendCoinsToNeighbor(self.x, self.y+1)
-        self.SendCoinsToNeighbor(self.x+1, self.y)
-        self.SendCoinsToNeighbor(self.x-1, self.y)
+        self.SendCoinsToNeighbor(self.x, self.y + 1)
+        self.SendCoinsToNeighbor(self.x, self.y - 1)
+        self.SendCoinsToNeighbor(self.x + 1, self.y)
+        self.SendCoinsToNeighbor(self.x - 1, self.y)
 
     def Update(self): # Оновлення даних про місто
         self.previousCoins = self.coins
@@ -168,7 +168,9 @@ def CheckCompleted(): # Перевірка країн на рахунок їх �
     global day
     for country in countries:
         if BeNotInCompleted(country):
-                completedCountries[country] = day
+            completedCountries[country] = day
+        if len(countries) == 1:
+            completedCountries[country] = 0
 
 def BeNotInCompleted(country): # Встановлення країн, що не були завершеними
     return country not in completedCountries.keys() and country.completed
