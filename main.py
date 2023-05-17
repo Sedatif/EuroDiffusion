@@ -206,16 +206,15 @@ def CheckConnections(): # Перевірка порядку зв'язаност�
 
 def CheckNear(country, countriesTemp): # Перевірка міста на сусідні міста
     for city in country.cities:
-        s = city.Exist(city.x, city.y - 1)
-        w = city.Exist(city.x - 1, city.y)
-        e = city.Exist(city.x + 1, city.y)
-        n = city.Exist(city.x, city.y + 1)
-        cities = [n, e, s, w]
+        north = city.exist(city.x, city.y - 1)
+        east = city.exist(city.x + 1, city.y)
+        south = city.exist(city.x, city.y + 1)
+        west = city.exist(city.x - 1, city.y)
+        cities = [north, east, south, west]
         for country in countriesTemp:
-            name = country.name
-            if name == city.country:
+            if country.name == city.country:
                 continue
-            connected = CityFound(cities, name)
+            connected = CityFound(cities, country.name)
             if connected:
                 return True
     return False
