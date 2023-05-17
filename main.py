@@ -187,8 +187,8 @@ def SortDays(country): # Сортування країн за днем "заве
 
 def ShowCompleted(): # Вивід результату обчислення кількості днів
     l = list(completedCountries)
-    l.sort(key=SortName)
     l.sort(key=SortDays)
+    l.sort(key=SortName)
     for country in l:
         print('{} {}'.format(country.name, completedCountries[country]))
 
