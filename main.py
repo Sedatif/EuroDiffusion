@@ -20,7 +20,11 @@ class Country: # Клас, який уособлює країну
         self.connected = False
 
     def SetCities(self): # Створення записів про міста країни
-        self.cities = [City(x, y, self.name, countries) for y in range(self.yl, self.yh + 1) for x in range(self.xl, self.xh + 1)]
+        self.cities = [
+            City(x, y, self.name, countries) 
+            for y in range(self.yl, self.yh + 1) 
+            for x in range(self.xl, self.xh + 1)
+        ]
 
     def Day(self): # Емуляція денного існування країни
         for city in self.cities:
