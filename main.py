@@ -159,11 +159,11 @@ def CheckInputValidation(count): # Вивід перевірок
         if not data:
             print("Спробуйте ввести назву країни та її координати ще раз")
             continue
-        elif CountryExist(data['name']):
-            print("Країна вже існує")
-            continue
         elif CheckData(data):
             print("Невалідні координати країни")
+            continue
+        elif CountryExist(data['name']):
+            print("Країна вже існує")
             continue
         countries.append(Country(data['name'], data['xl'], data['yl'], data['xh'], data['yh']))
         position += 1
